@@ -1,88 +1,66 @@
 :root {
-  --blue-color: #00acdc; /* OK */
+  --blue-color: #00acdc;
 }
 
 body {
   margin: 0;
-  font-family: Roboto, sans-serif; /* Adicionei a fonte aqui */
-  font-size: 12px; /* Adicionei o tamanho da fonte aqui */
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
 }
 
-header {
+.header {
   display: flex;
-  align-items: center; /* Centraliza verticalmente o conteúdo */
+  align-items: center;
   justify-content: space-between;
-  padding: 0 50px; /* OK */
-
-  /* A altura do header NÃO é definida aqui, mas sim nos links! */
+  padding: 0 50px;
 }
 
-/* Estilos para o logo, se precisar */
 .logo {
-  /* Adicione uma classe "logo" ao seu link do logo no HTML */
   display: block;
   height: 40px;
-
-  /* Pegue a altura exata do logo no Figma, ex: height: 60px; */
 }
 
 .nav__list {
-  /* Use a classe BEM que corrigimos no HTML */
   display: flex;
   margin: 0;
   padding: 0;
-  list-style: none; /* Remove bolinhas da lista */
+  list-style: none;
 }
 
 .nav__item {
-  /* Use a classe BEM */
-
-  margin-right: 20px; /* Medir no Figma a distância entre os itens e aplicar margin-right */
-
-  /* Ex: margin-right: 30px; */
-
-  /* E remover do último item para não ter margem extra no final */
+  margin-right: 20px;
 }
 
 .nav__item:last-child {
-  margin-right: 0; /* Remove a margem do último item */
+  margin-right: 0;
 }
 
 .nav__link {
-  /* Use a classe BEM */
-  display: block;
-  padding: 0; /* A tarefa diz: "Nav Links should not have any padding" */
-  text-align: center; /* Centraliza o texto dentro do link */
-  text-transform: uppercase; /* OK */
+  display: flex;
+  padding: 0;
+  text-align: center;
+  text-transform: uppercase;
   text-decoration: none;
-  color: #000; /* Cor padrão, pegue no Figma */
+  color: #000;
   height: 60px;
-  line-height: 60px;
-
-  /* A altura é definida aqui para centralizar o texto verticalmente */
-
-  /* Pegue essa altura no Figma para os links, ex: height: 60px; */
-
-  /* line-height deve ser igual à altura para centralizar verticalmente */
-
-  /* Ex: line-height: 60px; */
-  position: relative; /* FUNDAMENTAL para o ::after se posicionar corretamente */
+  position: relative;
+  align-items: center;
 }
 
 .nav__link:hover {
-  color: var(--blue-color); /* Cor ao passar o mouse */
+  color: var(--blue-color);
 }
 
 .nav__link.is-active {
-  color: var(--blue-color); /* Cor do link ativo */
+  color: var(--blue-color);
 }
 
 .nav__link.is-active::after {
   content: '';
-  position: absolute; /* OK, agora que o pai tem position: relative */
+  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 4px; /* Pegue no Figma, geralmente é 2px ou 4px */
-  background-color: var(--blue-color); /* Use a variável de cor! */
+  height: 4px;
+  background-color: var(--blue-color);
 }
